@@ -5,27 +5,27 @@ import 'app_colors.dart';
 class AppTextStyles {
   static TextTheme textTheme(AppColors colors) {
     return TextTheme(
-      displayLarge: GoogleFonts.poppins(
+      displayLarge: GoogleFonts.roboto(
         fontSize: 24,
         fontWeight: FontWeight.bold,
         color: colors.textPrimary,
       ),
-      displayMedium: GoogleFonts.poppins(
+      displayMedium: GoogleFonts.roboto(
         fontSize: 20,
         fontWeight: FontWeight.w600,
         color: colors.textPrimary,
       ),
-      titleMedium: GoogleFonts.poppins(
+      titleMedium: GoogleFonts.roboto(
         fontSize: 18,
         fontWeight: FontWeight.w500,
         color: colors.secondary,
       ),
-      bodyLarge: GoogleFonts.poppins(
+      bodyLarge: GoogleFonts.roboto(
         fontSize: 16,
         fontWeight: FontWeight.normal,
         color: colors.textPrimary,
       ),
-      labelLarge: GoogleFonts.poppins(
+      labelLarge: GoogleFonts.roboto(
         fontSize: 16,
         fontWeight: FontWeight.bold,
         color: colors.buttonText,

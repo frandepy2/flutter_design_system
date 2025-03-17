@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 class AppColors {
-  // 🎨 Paleta de colores dinámicos
   final Color primary;
   final Color primaryVariant;
   final Color primaryLight;
@@ -21,7 +20,6 @@ class AppColors {
   final Color error;
   final Color success;
 
-  // Constructor con valores predeterminados
   const AppColors({
     required this.primary,
     required this.primaryVariant,
@@ -39,43 +37,54 @@ class AppColors {
     required this.success,
   });
 
-  // 🎯 Método para obtener una versión Light
   factory AppColors.light() => const AppColors(
-        primary: Color(0xFF6750A4),
-        primaryVariant: Color(0xFF4F378B),
-        primaryLight: Color(0xFFD0BCFF),
-        secondary: Color(0xFF625B71),
-        secondaryVariant: Color(0xFF4A4458),
-        secondaryLight: Color(0xFFCCC2DC),
-        tertiary: Color(0xFF7D5260),
-        tertiaryVariant: Color(0xFF633B48),
-        tertiaryLight: Color(0xFFEFB8C8),
-        background: Color(0xFFF5F5F5),
-        textPrimary: Color(0xFF1D1B20),
-        buttonText: Color(0xFFE6E1E5),
-        error: Color(0xFFB3261E),
-        success: Color(0xFF388E3C),
+        primary:
+            Color(0xFF5E60CE), // Azul-violeta vibrante (antes era muy apagado)
+        primaryVariant: Color(0xFF4A44A1), // Tono más oscuro del primary
+        primaryLight: Color(0xFFB3B8FF), // Azul-violeta más claro
+
+        secondary: Color(0xFF4A4E69), // Gris azulado elegante
+        secondaryVariant: Color(0xFF2D3142), // Versión más oscura
+        secondaryLight: Color(0xFFB8C1EC), // Versión más clara
+
+        tertiary: Color(0xFFE07A5F), // Naranja coral para dar calidez
+        tertiaryVariant: Color(0xFFC75C47), // Versión más oscura
+        tertiaryLight: Color(0xFFF4A261), // Versión más clara
+
+        background: Color(
+            0xFFF8F9FA), // Gris muy claro, casi blanco (antes era muy grisáceo)
+        textPrimary:
+            Color(0xFF22223B), // Azul oscuro, más legible que negro puro
+        buttonText:
+            Color(0xFFFFFFFF), // Blanco puro para contrastar con los botones
+
+        error: Color(0xFFD90429), // Rojo intenso para errores
+        success: Color(0xFF2D6A4F), // Verde oscuro para éxito
       );
 
-  // 🌙 Método para obtener una versión Dark
   factory AppColors.dark() => const AppColors(
-        primary: Color(0xFFBB86FC),
-        primaryVariant: Color(0xFF3700B3),
-        primaryLight: Color(0xFFCE93D8),
-        secondary: Color(0xFF03DAC6),
-        secondaryVariant: Color(0xFF018786),
-        secondaryLight: Color(0xFFB2DFDB),
-        tertiary: Color(0xFFCF6679),
-        tertiaryVariant: Color(0xFFB00020),
-        tertiaryLight: Color(0xFFF48FB1),
-        background: Color(0xFF1C1B1F),
-        textPrimary: Color(0xFFE6E1E5),
-        buttonText: Color(0xFFE6E1E5),
-        error: Color(0xFFCF6679),
-        success: Color(0xFF03DAC6),
+        primary:
+            Color(0xFF5E60CE), // Azul-violeta vibrante (antes era muy apagado)
+        primaryVariant: Color(0xFF4A44A1), // Tono más oscuro del primary
+        primaryLight: Color(0xFFB3B8FF), // Azul-violeta más claro
+
+        secondary: Color(0xFF4A4E69), // Gris azulado (coherente con Light Mode)
+        secondaryVariant: Color(0xFF22223B), // Versión más oscura
+        secondaryLight: Color(0xFFB8C1EC), // Versión más clara
+
+        tertiary: Color(0xFFEF8354), // Naranja más vibrante en modo oscuro
+        tertiaryVariant: Color(0xFFC75C47), // Versión más oscura
+        tertiaryLight: Color(0xFFF4A261), // Versión más clara
+
+        background: Color(0xFF121212), // Gris-negro (en lugar de negro puro)
+        textPrimary: Color(0xFFF5F5F5), // Blanco humo para no ser tan brillante
+        buttonText:
+            Color(0xFF000000), // Negro para contrastar en botones claros
+
+        error: Color(0xFFCF6679), // Rojo más suave para Dark Mode
+        success: Color(0xFF50FA7B), // Verde neón para mayor visibilidad
       );
 
-  // 🌗 Método para obtener una versión basada en ThemeMode
   factory AppColors.fromBrightness(Brightness brightness) {
     return brightness == Brightness.dark ? AppColors.dark() : AppColors.light();
   }

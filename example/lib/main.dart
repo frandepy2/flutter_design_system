@@ -4,43 +4,40 @@ import 'package:provider/provider.dart';
 import 'package:design_system/design_system.dart';
 
 void main() {
-  final myCustomColors = AppColors(
-    primary: Colors.deepPurple,
-    primaryVariant: Colors.purpleAccent,
-    primaryLight: Colors.deepPurple.shade200,
-    secondary: Colors.orange,
-    secondaryVariant: Colors.orangeAccent,
-    secondaryLight: Colors.orange.shade200,
-    tertiary: Colors.cyan,
-    tertiaryVariant: Colors.cyan.shade700,
-    tertiaryLight: Colors.cyan.shade200,
-    background: Colors.black,
-    textPrimary: Colors.white,
-    buttonText: Colors.white,
-    error: Colors.redAccent,
-    success: Colors.green,
-  );
+  WidgetsFlutterBinding
+      .ensureInitialized();
+
+  final themeProvider = ThemeProvider();
+
   runApp(
     ChangeNotifierProvider(
-      create: (_) => ThemeProvider()..loadTheme(),
+      create: (_) => themeProvider,
       child: const MainApp(),
     ),
   );
 }
 
-class MainApp extends StatelessWidget {
+class MainApp extends StatefulWidget {
   const MainApp({super.key});
+
+  @override
+  State<MainApp> createState() => _MainAppState();
+}
+
+class _MainAppState extends State<MainApp> {
+  @override
+  void initState() {
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
     final themeProvider = Provider.of<ThemeProvider>(context);
 
-     
-
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: AppTheme(themeProvider.customColors).themeData,
-      darkTheme: AppTheme.darkTheme,
+      darkTheme:  AppTheme(themeProvider.customColors).themeData,
       themeMode: themeProvider.themeMode,
       home: const HomeScreen(),
     );
@@ -81,7 +78,6 @@ class _HomeScreenState extends State<HomeScreen> {
         padding: const EdgeInsets.all(16.0),
         child: ListView(
           children: [
-            // 📌 Botones
             const Text("Buttons",
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
             const SizedBox(height: 8),
@@ -102,7 +98,6 @@ class _HomeScreenState extends State<HomeScreen> {
 
             const SizedBox(height: 20),
 
-            // 📌 Inputs
             const Text("Inputs",
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
             const SizedBox(height: 8),
@@ -112,7 +107,6 @@ class _HomeScreenState extends State<HomeScreen> {
 
             const SizedBox(height: 20),
 
-            // 📌 Dropdown, Slider, Checkbox, Switch, RadioButton
             const Text("Form Elements",
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
             const SizedBox(height: 8),
@@ -194,7 +188,6 @@ class _HomeScreenState extends State<HomeScreen> {
 
             const SizedBox(height: 20),
 
-            // 📌 Cards
             const Text("Cards",
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
             const SizedBox(height: 8),
@@ -217,7 +210,6 @@ class _HomeScreenState extends State<HomeScreen> {
 
             const SizedBox(height: 20),
 
-            // 📌 Snackbar y Dialogs
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
