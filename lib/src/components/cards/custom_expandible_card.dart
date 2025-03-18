@@ -1,3 +1,4 @@
+import 'package:design_system/src/animations/fade_in_animation.dart';
 import 'package:flutter/material.dart';
 
 class DSCustomExpandableCard extends StatefulWidget {
@@ -27,22 +28,24 @@ class _DSCustomExpandableCardState extends State<DSCustomExpandableCard> {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      elevation: 4,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-      child: Column(
-        children: [
-          ListTile(
-            title: Text(widget.title),
-            subtitle: Text(widget.description),
-            trailing: Icon(_isExpanded ? Icons.expand_less : Icons.expand_more),
-            onTap: _toggleExpand,
-          ),
-          if (_isExpanded) Padding(
-            padding: const EdgeInsets.all(12.0),
-            child: widget.expandedContent,
-          ),
-        ],
+    return DSFadeInAnimation(
+      child: Card(
+        elevation: 4,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+        child: Column(
+          children: [
+            ListTile(
+              title: Text(widget.title),
+              subtitle: Text(widget.description),
+              trailing: Icon(_isExpanded ? Icons.expand_less : Icons.expand_more),
+              onTap: _toggleExpand,
+            ),
+            if (_isExpanded) Padding(
+              padding: const EdgeInsets.all(12.0),
+              child: widget.expandedContent,
+            ),
+          ],
+        ),
       ),
     );
   }
