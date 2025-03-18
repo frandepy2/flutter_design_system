@@ -9,7 +9,7 @@ class AppChipStyles {
       disabledColor: colors.secondaryLight,
       labelStyle: TextStyle(color: Colors.white),
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(12),
+        borderRadius: BorderRadius.circular(24),
       ),
     );
   }

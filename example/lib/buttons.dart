@@ -49,23 +49,47 @@ class ButtonScreen extends StatelessWidget {
             const SizedBox(
               height: 8,
             ),
+            DSIconButton(
+              backgroundColor: Colors.green,
+              text: "Add to Cart",
+              icon: Icons.shopping_cart,
+              onPressed: () {
+                print("Added to Cart");
+              },
+            ),
+            const SizedBox(
+              height: 8,
+            ),
+            DSIconButton(
+              backgroundColor: Colors.red,
+              text: "Eliminar",
+              icon: Icons.delete,
+              onPressed: () {
+                print("Added to Cart");
+              },
+            ),
+            const SizedBox(
+              height: 8,
+            ),
             Padding(
-              padding: EdgeInsets.only(right: MediaQuery.of(context).size.width * 0.2),
+              padding: EdgeInsets.only(
+                  right: MediaQuery.of(context).size.width * 0.2),
               child: DSPrimaryButton(text: 'Primary Button', onPressed: () {}),
             ),
             const SizedBox(
               height: 8,
             ),
             Padding(
-              padding: EdgeInsets.only(right: MediaQuery.of(context).size.width * 0.4),
+              padding: EdgeInsets.only(
+                  right: MediaQuery.of(context).size.width * 0.4),
               child: DSPrimaryButton(text: 'Primary Button', onPressed: () {}),
             ),
-
             const SizedBox(
               height: 8,
             ),
             Padding(
-              padding: EdgeInsets.only(right: MediaQuery.of(context).size.width * 0.6),
+              padding: EdgeInsets.only(
+                  right: MediaQuery.of(context).size.width * 0.6),
               child: DSPrimaryButton(text: 'Button', onPressed: () {}),
             ),
           ],
